@@ -20,7 +20,7 @@ Its a fake ssl Certificate, so deactivate validation certificates.
 Project:
 
 It separates server.js(only runs the http server) and app.js(has the main structure), it provides a way to do integrations tests.
-app.js is loading all the structures, including the observer that knows where it is going do send errors(like sentry).
+app.js is loading all the structures, including the observer that knows where it is going do send errors(like sentry or file logs, what ever it is needed).
 
 O routes.js whe have the main route that points to other routes making it cleaner. In there is an Event pointed route with a middleware for all routes inside de event routes. 
 This middleware has a time set on the .env that says the expiration time for the cached request, to avoid duplicated requestes from the same user. If it is duplicated in that time period, it will no save the event.
