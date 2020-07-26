@@ -1,0 +1,65 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /home/richard/.local/bin:/home/richard/bin:/usr/share/Modules/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/richard/Code/nodejs/api-Events/package.json: Unexpected token } in JSON at position 601
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "Event-api",
+    "version": "1.0.0",
+    "main": "server.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "yarn install && node src/server.js --ignore __testes__",
+      "dev": "nodemon src/server.js --ignore __testes__",
+      "db:up": " yarn sequelize db:migrate",
+      "db:down": " yarn sequelize db:migrate:undo:all",
+      "pretest": "cross-env NODE_ENV=test APP_SECRET=1k2l38udqwkj213klj sequelize db:migrate",
+      "test": "cross-env NODE_ENV=test APP_SECRET=1k2l38udqwkj213klj jest",
+      "posttest": "cross-env NODE_ENV=test APP_SECRET=1k2l38udqwkj213klj sequelize db:migrate:undo:all",
+    },
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "connect-timeout": "^1.9.0",
+      "cors": "^2.8.5",
+      "cross-env": "^7.0.0",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "express-validator": "^6.3.0",
+      "moment": "^2.26.0",
+      "nodemon": "^2.0.1",
+      "pg": "^7.18.1",
+      "sequelize": "^5.21.2",
+      "swagger-ui-express": "^4.1.2",
+      "yamljs": "^0.3.0"
+    },
+    "devDependencies": {
+      "jest": "^24.9.0",
+      "sequelize-cli": "^5.5.1",
+      "supertest": "^4.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

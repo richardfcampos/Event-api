@@ -1,0 +1,6 @@
+.env
+node_modules/*
+__tests__/database.sqlite
+__tests__/coverage
+.idea/*
+yarn.lock

@@ -1,0 +1,38 @@
+{
+  "name": "Event-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn install && node src/server.js --ignore __testes__",
+    "dev": "nodemon src/server.js --ignore __testes__",
+    "db:on": "docker-compose up -d",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "db:up": "yarn db:on && npx sequelize-cli db:migrate && yarn db:seed",
+    "db:down": " yarn sequelize db:migrate:undo:all"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.20.1",
+    "body-parser": "^1.19.0",
+    "connect-timeout": "^1.9.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "moment": "^2.26.0",
+    "nodemon": "^2.0.1",
+    "pg": "^7.18.1",
+    "redis": "^3.0.2",
+    "sequelize": "^5.21.2",
+    "swagger-ui-express": "^4.1.2",
+    "uuid": "^8.2.0",
+    "uuid-validate": "^0.0.3",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "sequelize-cli": "^5.5.1",
+    "supertest": "^4.0.2"
+  }
+}

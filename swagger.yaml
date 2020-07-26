@@ -1,0 +1,67 @@
+swagger: "2.0"
+info:
+  description: "event api"
+  version: "0.0.0"
+  title: "event Api"
+  contact:
+    email: "richardfcampos@gmail.com"
+  license:
+    name: ""
+    url: ""
+host: ""
+basePath: ""
+tags:
+  - name: "Notifications"
+    description: "Notifications route"
+    externalDocs:
+      description: "Find out more"
+      url: "http://swagger.io"
+schemes:
+  - "https"
+paths:
+  /event:
+    post:
+      tags:
+        - "event"
+      summary: "Create push notifications"
+      description: ""
+      operationId: "add nofitications"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Objeto de usuário para adicionar ao banco"
+          required: true
+          schema:
+            $ref: "#/definitions/event"
+      responses:
+        401:
+          description: "Invalid input"
+
+
+definitions:
+  event:
+    type: "object"
+    required:
+      - "user_id"
+      - "event"
+      - "location"
+    properties:
+      user_id:
+        type: string
+        pattern: '^\d{8}-\d{4}-\d{4}-\d{4}-\d{12}$'
+        exemple: "40e191ba-3221-47bf-b6f9-3d93bd6b6369"
+      event:
+        type: "string"
+        exemple: "click__applicationCreatedFromBottomBtn"
+      location:
+        type: "string"
+        exemple: "HomeScreen"
+
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
