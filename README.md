@@ -4,6 +4,8 @@ Instalation
 
 - Install the dependencies: 
 ```yarn install```
+- Copy the .env-exemple to .env: 
+```cp .env-exemple .env```
 - Get the 2 DB up using docker use the command:
 ```yarn db:on```
 - Migrate tables and DB extension:
